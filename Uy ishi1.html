@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tizimga Kirish</title>
+        <style>
+            /* 1. Element selektor: Barcha sahifani o'rtaga keltirish va orqa fon berish */
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #def1f4, #c1c8c2);
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                justify-content: center; /* Gorizontal bo'yicha o'rtaga keltirish */
+                align-items: center;     /* Vertikal bo'yicha o'rtaga keltirish */
+            }
+
+            /* 2. Class selektor: Forma blokini oq fonli va chiroyli qilish */
+            .login-box {
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                width: 320px;
+            }
+
+            /* 3. ID selektor: Email maydonini o'ziga xos bezash */
+            #email {
+                border: 2px solid #0099b5;
+            }
+
+            /* 4. Guruh selektor: Sarlavha va matnlarni bir xil rangda uslublash */
+            h1, label, p {
+                color: #333333;
+            }
+
+            /* 5. Spetsifiklik namoyishi */
+            /* Element selektor orqali input matn rangi qizil qilib belgilanadi */
+            input {
+                color: red;
+            }
+            
+            /* Class selektor element selektordan kuchliroq bo'lgani uchun quyidagi yashil rang ustun keladi */
+            .text-color {
+                color: green;
+            }
+            /* Spetsifiklik izohi: Class selektori element selektoriga nisbatan kuchliroq spetsifiklikka ega, shuning uchun input matni qizil emas, yashil rangda chiqadi. */
+
+            /* Qo'shimcha input dizaynlari */
+            .login-box input[type="email"],
+            .login-box input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .login-box button {
+                width: 100%;
+                padding: 10px;
+                background-color: #0099b5;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .login-box button:hover {
+                background-color: #00778f;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="login-box">
+            <h1>Tizimga Kirish</h1>
+            <form>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" id="email" class="text-color" required placeholder="Email @gmail.com">
+                <br>
+
+                <label for="parol">Parol:</label>
+                <br>
+                <input type="password" id="parol" class="text-color" required placeholder="Parolni kiriting" minlength="12" maxlength="20">
+                <br>
+
+                <button type="submit">Kirish</button>
+            </form>
+        </div>
+
+    </body>
+</html>
