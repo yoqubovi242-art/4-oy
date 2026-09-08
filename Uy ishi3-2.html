@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Koinot sirlari</title>
+        <style>
+            body {
+                /* Fon rasmi sozlamalari */
+                background-image: url("https://images.unsplash.com/photo-1451187580459-43490279c0fa");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                min-height: 100vh;
+                margin: 0;
+
+                /* Elementlarni ekran markaziga keltirish (Flexbox) */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: sans-serif;
+            }
+
+            /* Markaziy shaffof blok */
+            .card {
+                background-color: rgba(10, 25, 47, 0.75); /* Shaffof qorong'i fon */
+                padding: 40px;
+                border-radius: 15px;
+                text-align: center;
+                max-width: 600px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .title {
+                color: #f1c40f; /* Sarlavha uchun sariq rang */
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .description {
+                color: #ffffff; /* Matn uchun oq rang */
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 25px;
+            }
+
+            /* Tugma stili */
+            .btn {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            /* Sichqoncha tugma ustiga kelgandagi effekt */
+            .btn:hover {
+                background-color: #2980b9;
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Markaziy blok -->
+        <div class="card">
+            <h1 class="title">Koinot Sirlarini O'rganamiz</h1>
+            <p class="description">
+                Ushbu loyiha CSS-da HEX, RGB va nomlangan ranglar hamda background-size, 
+                background-position xossalari orqali to'liq ekran hajmini egallashni ko'rsatib beradi.
+            </p>
+            <button class="btn">Boshlash</button>
+        </div>
+
+    </body>
+</html>
