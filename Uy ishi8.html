@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Uyga vazifa: CSS Joylashuv</title>
+<style>
+  /* Kerakli CSS qoidalarini shu yerga yozing */
+
+        
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px; 
+    background-color: #e2e8f0;
+}
+.menu-header {
+    position: relative; 
+    display: inline-block;
+    background-color: #cbd5e1;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+
+.menu-header:hover .dropdown {
+    display: block; 
+}
+
+/* 3-topshiriq */
+.box-shift {
+    position: relative;
+    left: 20px; 
+    top: 10px; 
+    background-color: #fef08a;
+    padding: 10px;
+    margin-top: 20px;
+    width: fit-content;
+}
+
+    
+</style>
+</head>
+<body>
+
+  <!-- 1-topshiriq -->
+  <div class="hero">
+    <button class="cta-button">Buyurtma berish</button>
+  </div>
+
+  <!-- 2-topshiriq -->
+  <div class="menu-header">
+    <span>Menyu</span>
+    <div class="dropdown">
+      <p>Bo'lim A</p>
+      <p>Bo'lim B</p>
+    </div>
+  </div>
+
+  <!-- 3-topshiriq -->
+  <div class="box-shift">Bu elementni siljiting</div>
+
+</body>
+</html>
