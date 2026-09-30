@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qahvaxona</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fdfbf7;
+            color: #2c2c2c;
+        }
+
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #2c2c2c;
+        }
+
+        .logo span {
+            color: #7b4b28;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a4a4a;
+            margin-left: 30px;
+            font-size: 15px;
+        }
+
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 8%;
+            color: white;
+        }
+
+        .badge {
+            background-color: #c18a56;
+            color: white;
+            padding: 5px 12px;
+            font-size: 12px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            max-width: 600px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 500px;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            line-height: 1.5;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #d4833c;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        
+        
+
+        
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            border: 1px solid #eee;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 20px;
+        }
+
+        .menu-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .menu-card-header h3 {
+            font-size: 18px;
+            color: #2c2c2c;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #b5651d;
+        }
+
+        .menu-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .card-btn {
+            background: transparent;
+            border: 1px solid #d4833c;
+            color: #d4833c;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        
+        .contact-section {
+            padding: 80px 8%;
+            background-color: #fcf9f2;
+            text-align: center;
+        }
+
+        .contact-subtitle {
+            color: #d4833c;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            color: #2c1d11;
+            margin-bottom: 10px;
+        }
+
+        .contact-section > p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background-color: #d4833c;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        
+        footer {
+            background-color: #23170f;
+            color: #b0a399;
+            text-align: center;
+            padding: 40px 8%;
+        }
+
+        footer .footer-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <div class="logo">
+            <span>☕</span> Qahvaxona
+        </div>
+        <nav>
+            <a href="#">Menyu</a>
+            <a href="#">Bog'lanish</a>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <div class="badge">Toshkent markazida</div>
+        <h1>Har qultumda iliq his</h1>
+        <p>Dunyoning eng sara qahva donlari, mohir baristalar qo'li va iliq muhit — barchasi siz uchun.</p>
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Menyuni ko'rish</a>
+            <a href="#" class="btn btn-secondary">Bog'lanish</a>
+        </div>
+    </section>
+
+    
+    <section class="menu-section">
+        <h2>Bizning Menyu</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=500&q=80" alt="Espresso">
+                <div class="menu-card-content">
+                    <div class="menu-card-header">
+                        <h3>Espresso</h3>
+                        <span class="price">15 000 so'm</span>
+                    </div>
+                    <p>Kuchli va boy ta'mga ega klassik qahva turi.</p>
+                    <button class="card-btn">Buyurtma berish</button>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=500&q=80" alt="Cappuccino">
+                <div class="menu-card-content">
+                    <div class="menu-card-header">
+                        <h3>Cappuccino</h3>
+                        <span class="price">18 000 so'm</span>
+                    </div>
+                    <p>Sut ko'pigi va hushbo'y espresso uyg'unligi.</p>
+                    <button class="card-btn">Buyurtma berish</button>
+                </div>
+            </div>
+            
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80" alt="Cold Brew">
+                <div class="menu-card-content">
+                    <div class="menu-card-header">
+                        <h3>Cold Brew</h3>
+                        <span class="price">22 000 so'm</span>
+                    </div>
+                    <p>Sovuq usulda damlangan tetiklashtiruvchi qahva.</p>
+                    <button class="card-btn">Buyurtma berish</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="contact-section">
+        <div class="contact-subtitle">Aloqa</div>
+        <h2>Biz bilan bog'laning</h2>
+        <p>Savollaringiz bormi? Xabar yozing — tez orada javob beramiz.</p>
+        
+        <form class="contact-form">
+            <div class="form-group">
+                <label>Ism *</label>
+                <input type="text" placeholder="Ismingiz" required>
+            </div>
+            <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" placeholder="+998 90 000 00 00">
+            </div>
+            <div class="form-group full-width">
+                <label>Email *</label>
+                <input type="email" placeholder="email@manzil.uz" required>
+            </div>
+            <div class="form-group full-width">
+                <label>Xabar *</label>
+                <textarea placeholder="Xabaringizni yozing..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Yuborish</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">☕ Qahvaxona</div>
+        <p>Toshkent, Chilonzor tumani, Navruz ko'chasi 12 • Har kuni 08:00 — 22:00</p>
+        <p class="copy">&copy; 2026 Qahvaxona. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+</body>
+</html>
